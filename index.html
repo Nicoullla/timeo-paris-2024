@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enregistrement de points</title>
+</head>
+<body>
+
+<h1>Enregistrement de points</h1>
+
+<label for="texte">Entrez votre pseudo :</label>
+<input type="text" id="texte" placeholder="Entrez votre pseudo">
+
+<button onclick="enregistrerPoints()">Enregistrer</button>
+
+<p id="resultat"></p>
+
+<script>
+    function enregistrerPoints() {
+        var texte = document.getElementById("texte").value;
+        var points = Math.floor(Math.random() * 101); // Nombre aléatoire entre 0 et 100
+        var date = new Date();
+        var temps = date.toLocaleTimeString();
+
+        var resultat = document.getElementById("resultat");
+        resultat.innerHTML += "<p>" + temps + " - Texte: " + texte + ", Points: " + points + "</p>";
+    }
+</script>
+
+</body>
+</html>
